@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/@lism-ui/core@0.0.13/dist/scripts/accordion.js" type="module"></script>
+		<script src="/script.js" type="module"></script>
+		<!-- https://cdn.jsdelivr.net/npm/@lism-ui/core@0.0.13/dist/components/Accordion/setAccordion.js -->
+		<!-- 以下を追加 -->
+		<script
+			src="https://unpkg.com/htmx.org@2.0.0"
+			integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+			crossorigin="anonymous"
+		></script>
+		<link href="https://cdn.jsdelivr.net/npm/lism-css/dist/css/all.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="l--stack" style="min-height: 100dvh">
+			<div hx-get="/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+			<div class="is--container -container:m is--flow has--gutter -mbs:50">
+				<p class="-fw:bold -fz:l">This site is a playground for testing lism-css.</p>
+				<div
+					class="l--flex -g:20 -g@sm -g@md -p:20 -p@sm -p@md -bd: -bdc:divider"
+					style="--sm-g: var(--s30); --md-g: var(--s40); --sm-p: var(--s30); --md-p: var(--s40)"
+				>
+					<div class="l--box -lh:1 -p:30 -bd:">1</div>
+					<div class="l--box -lh:1 -p:30 -bd:">2</div>
+					<div class="l--box -lh:1 -p:30 -bd:">3</div>
+					<div class="l--box -lh:1 -p:30 -bd: -mis:a">4</div>
+				</div>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere laudantium ex eos doloribus aut dolore
+					nisi provident libero, eum nulla sunt, porro sed dicta. Impedit ullam eveniet obcaecati minima.
+				</p>
+				<div class="l--box is--flow is--fullwide has--gutter -bgc:base-2 -py:50 -my:" style="--my: var(--s50)">
+					<p class="-ta:c">Fullwide area</p>
+					<div class="l--columns -g:40" style="--cols: 2">
+						<div class="l--box -bgc:base -p:40 -bdrs:2 -bxsh:3">Columns</div>
+						<div class="l--box -bgc:base -p:40 -bdrs:2 -bxsh:3">Columns</div>
+					</div>
+					<div class="l--flex -jc:c -mbs:50">
+						<a class="-hov:fade -d:if -c:base -bgc:text -px:40 -py:20 -td:n -bdrs:99" href="###">Link Button</a>
+					</div>
+				</div>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere laudantium ex eos doloribus aut dolore
+					nisi provident libero, eum nulla sunt, porro sed dicta. Impedit ullam eveniet obcaecati minima.
+				</p>
+				<div class="l--stack -bd:b -my:" style="max-width: var(--size--s); --my: var(--s50)">
+					<details class="d--accordion -p:20 -bd:t">
+						<summary class="d--accordion__header l--flex -ai:c -fw:bold">
+							<span class="d--accordion__label -fx:1">Question 01 ?</span>
+							<span class="d--accordion__icon -d:ig">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 256 256"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									focusable="false"
+									class="l--icon"
+									aria-hidden="true"
+								>
+									<path
+										d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
+									></path>
+								</svg>
+							</span>
+						</summary>
+						<div class="d--accordion__body l--grid -mbs:20">
+							<div class="d--accordion__inner -ov:h">
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere laudantium ex eos
+									doloribus aut dolore nisi provident libero, eum nulla sunt, porro sed dicta. Impedit ullam eveniet obcaecati
+									minima.
+								</p>
+							</div>
+						</div>
+					</details>
+					<details class="d--accordion -p:20 -bd:t">
+						<summary class="d--accordion__header l--flex -ai:c -fw:bold">
+							<span class="d--accordion__label -fx:1">Question 02 ?</span>
+							<span class="d--accordion__icon -d:ig">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 256 256"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									focusable="false"
+									class="l--icon"
+									aria-hidden="true"
+								>
+									<path
+										d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
+									></path>
+								</svg>
+							</span>
+						</summary>
+						<div class="d--accordion__body l--grid -mbs:20">
+							<div class="d--accordion__inner -ov:h">
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere laudantium ex eos
+									doloribus aut dolore nisi provident libero, eum nulla sunt, porro sed dicta. Impedit ullam eveniet obcaecati
+									minima.
+								</p>
+							</div>
+						</div>
+					</details>
+					<details class="d--accordion -p:20 -bd:t">
+						<summary class="d--accordion__header l--flex -ai:c -fw:bold">
+							<span class="d--accordion__label -fx:1">Question 03 ?</span>
+							<span class="d--accordion__icon -d:ig">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 256 256"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									focusable="false"
+									class="l--icon"
+									aria-hidden="true"
+								>
+									<path
+										d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
+									></path>
+								</svg>
+							</span>
+						</summary>
+						<div class="d--accordion__body l--grid -mbs:20">
+							<div class="d--accordion__inner -ov:h">
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere laudantium ex eos
+									doloribus aut dolore nisi provident libero, eum nulla sunt, porro sed dicta. Impedit ullam eveniet obcaecati
+									minima.
+								</p>
+							</div>
+						</div>
+					</details>
+				</div>
+			</div>
+			<div hx-get="/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+		</div>
+	</body>
+</html>
