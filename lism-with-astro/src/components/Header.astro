@@ -1,0 +1,13 @@
+---
+import { Lism, Box, Text, Flex, Dummy, Container, Icon } from "lism-css/astro";
+import AstroIcon from "../icons/astro-icon.astro";
+---
+
+<Container size="m" tag="header" hasGutter py="30">
+  <Lism>
+    <Flex ai="c" g="5" fz="3xl" lh="xs">
+      <h1 class="-f:inherit -fw:bold">Lism CSS - with Astro</h1>
+      <Icon icon={AstroIcon} fz="xl" />
+    </Flex>
+  </Lism>
+</Container>
