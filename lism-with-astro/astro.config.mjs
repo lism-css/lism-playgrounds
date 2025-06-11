@@ -3,9 +3,9 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  //   vite: {
-  //     ssr: {
-  //       noExternal: ["lism-css"], // パッケージ名を指定
-  //     },
-  //   },
+	//   vite: {
+	//     ssr: {
+	//       noExternal: ["lism-css"], // パッケージ名を指定
+	//     },
+	//   },
 });

@@ -28,28 +28,16 @@ function App() {
 				<Box isFullwide hasGutter isFlow bgc='base-2' py='50' my='50'>
 					<Text ta='c'>Fullwide area</Text>
 					<Columns cols='2' g='40'>
-						<Box bgc='base' p='40' bdrs='2' bxsh='3'>
+						<Box bgc='base' p='40' bdrs='20' bxsh='30'>
 							Columns
 						</Box>
-						<Box bgc='base' p='40' bdrs='2' bxsh='3'>
+						<Box bgc='base' p='40' bdrs='20' bxsh='30'>
 							Columns
 						</Box>
 					</Columns>
-					<Flex jc='c' mbs='50'>
-						<Link
-							href='###'
-							hov='fade'
-							d='if'
-							c='base'
-							bgc='text'
-							px='40'
-							py='20'
-							td='n'
-							bdrs='99'
-						>
-							Link Button
-						</Link>
-					</Flex>
+					<Link href='###' hov='fade' c='base' bgc='text' d='f' w='fit' mx='auto' px='40' py='20' td='n' bdrs='99'>
+						Link Button
+					</Link>
 				</Box>
 
 				<Dummy length='l' />

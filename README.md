@@ -14,14 +14,16 @@ npm install
 npm run dev
 ```
 
-### 📄 lism-with-html
+### 📄 lism-with-htmx
 
-純粋な HTML/JavaScript（フレームワーク未使用）での実装例
+HTMX での実装例
 
 ```bash
-cd lism-with-html
+cd lism-with-htmx
 python3 -m http.server 8000
 ```
+
+または、 `lism-with-htmx`をプロジェクトルートとして VS Code で開き、Live Server 拡張機能などを使って確認してください。
 
 ### ⚡ lism-with-vite
 
