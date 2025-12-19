@@ -1,6 +1,7 @@
-import { Text, Link, Box, Flex, Stack, Dummy, Container, Columns, Accordion } from 'lism-css/react';
+import { Text, Link, Box, Flex, Stack, Dummy, Container, Columns } from 'lism-css/react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { Accordion } from '@lism-css/ui/react';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 						4
 					</Box>
 				</Flex>
+
 				<Dummy length='l' />
 				<Box isFullwide hasGutter isFlow bgc='base-2' py='50' my='50'>
 					<Text ta='c'>Fullwide area</Text>
