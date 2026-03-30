@@ -9,136 +9,95 @@
 			integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
 			crossorigin="anonymous"
 		></script>
-		<link href="https://cdn.jsdelivr.net/npm/lism-css@0.9.3/dist/css/main.css" rel="stylesheet" />
-		<script src="https://cdn.jsdelivr.net/npm/lism-css@0.9.3/dist/scripts/accordion.js" type="module"></script>
+		<script>
+			// ローカル静的サーバによっては Cache-Control が弱く、hx-get 用の部分 HTML がブラウザに残り続けることがある。
+			// リロードしても古い header/footer が出る場合の対策（本番では CDN/サーバ側でキャッシュ方針を決める）。
+			document.addEventListener("htmx:configRequest", function (evt) {
+				evt.detail.headers["Cache-Control"] = "no-cache";
+			});
+		</script>
+		<link href="https://cdn.jsdelivr.net/npm/lism-css@1.0.0-beta.1/dist/css/main.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/@lism-css/ui@0.9.2/dist/style.css" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/@lism-css/ui@0.9.2/dist/scripts/accordion.js" type="module"></script>
 	</head>
 	<body>
 		<div class="l--stack" style="min-height: 100dvh">
 			<div hx-get="/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
-			<div class="is--container -container:m is--flow has--gutter -mbs:50">
+			<div class="is--container is--wrapper -contentSize:s set--gutter l--flow -my-s:50">
 				<p class="-fw:bold -fz:l">This site is a playground for testing lism-css.</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat itaque et voluptatum, ducimus
+					temporibus accusamus exercitationem dolores id impedit corporis asperiores debitis soluta, nemo
+					iusto optio quae. Ducimus, aperiam tempora!
+				</p>
+
 				<div
-					class="l--flex -g:20 -g_sm -g_md -p:20 -p_sm -p_md -bd -bdc:divider"
-					style="--g_sm: var(--s30); --g_md: var(--s40); --p_sm: var(--s30); --p_md: var(--s40)"
+					class="l--flex -g:10 -g_sm -g_md -p:10 -p_sm -p_md -bd"
+					style="--g_sm: var(--s15); --g_md: var(--s20); --p_sm: var(--s15); --p_md: var(--s20)"
 				>
-					<div class="l--box -lh:1 -p:30 -bd">1</div>
-					<div class="l--box -lh:1 -p:30 -bd">2</div>
-					<div class="l--box -lh:1 -p:30 -bd">3</div>
-					<div class="l--box -lh:1 -p:30 -bd -mis:a">4</div>
+					<div class="l--box -lh:1 -p:20 -bd">1</div>
+					<div class="l--box -lh:1 -p:20 -bd">2</div>
+					<div class="l--box -lh:1 -p:20 -bd">3</div>
+					<div class="l--box -lh:1 -p:20 -bd -mx-s:auto">4</div>
 				</div>
+
+				<div class="l--columns -g:30" style="--cols: 2">
+					<div class="l--box -bgc:base -p:30 -bdrs:10 -bxsh:30">Columns</div>
+					<div class="l--box -bgc:base -p:30 -bdrs:10 -bxsh:30">Columns</div>
+				</div>
+
 				<p>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere
 					laudantium ex eos doloribus aut dolore nisi provident libero, eum nulla sunt, porro sed dicta.
 					Impedit ullam eveniet obcaecati minima.
 				</p>
-				<div class="l--box is--flow is--fullwide has--gutter -bgc:base-2 -py:50 -my" style="--my: var(--s50)">
-					<p class="-ta:c">Fullwide area</p>
-					<div class="l--columns -g:40" style="--cols: 2">
-						<div class="l--box -bgc:base -p:40 -bdrs:20 -bxsh:30">Columns</div>
-						<div class="l--box -bgc:base -p:40 -bdrs:20 -bxsh:30">Columns</div>
-					</div>
-					<div class="l--flex -jc:c -mbs:50">
-						<a class="-hov:fade -d:if -c:base -bgc:text -px:40 -py:20 -td:n -bdrs:99" href="###"
-							>Link Button</a
-						>
-					</div>
+
+				<div class="l--flex -jc:center">
+					<a class="-hov:o -bgc:text -lh:xs -c:base -px:20 -py:15 -td:none -bdrs:50" href="###">
+						Link Button
+					</a>
 				</div>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non facere
-					laudantium ex eos doloribus aut dolore nisi provident libero, eum nulla sunt, porro sed dicta.
-					Impedit ullam eveniet obcaecati minima.
-				</p>
-				<div class="l--stack -bd:b -my" style="max-width: var(--size-s); --my: var(--s50)">
-					<details class="d--accordion -p:20 -bd:t">
-						<summary class="d--accordion_header l--flex -ai:c -fw:bold">
-							<span class="d--accordion_label -fx:1">Question 01 ?</span>
-							<span class="d--accordion_icon -d:ig">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 256 256"
-									width="1em"
-									height="1em"
-									fill="currentColor"
-									focusable="false"
-									class="l--icon"
-									aria-hidden="true"
-								>
-									<path
-										d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
-									></path>
-								</svg>
-							</span>
-						</summary>
-						<div class="d--accordion_body l--grid -mbs:20">
-							<div class="d--accordion_inner -ov:h">
+
+				<hr class="a--divider" aria-hidden="true" />
+
+				<div class="l--stack c--accordion">
+					<div class="c--accordion_item -bd">
+						<div class="c--accordion_heading set--plain" role="heading">
+							<button
+								class="c--accordion_button l--flex set--plain -g:10 -w:100% -ai:center -jc:between -p:20"
+								aria-controls="acc-panel-1"
+								aria-expanded="false"
+							>
+								アコーディオン Example 1
+								<span class="c--accordion_icon a--icon -pi:center -fxsh:0" aria-hidden="true"></span>
+							</button>
+						</div>
+						<div class="c--accordion_panel -pos:rel -ov:hidden" id="acc-panel-1" hidden="until-found">
+							<div class="c--accordion_content l--flow -p:20 -pt:5">
+								<p>これはアコーディオンの中身です。@lism-css/ui を使用しています。</p>
+							</div>
+						</div>
+					</div>
+					<div class="c--accordion_item -bd">
+						<div class="c--accordion_heading set--plain" role="heading">
+							<button
+								class="c--accordion_button l--flex set--plain -g:10 -w:100% -ai:center -jc:between -p:20"
+								aria-controls="acc-panel-2"
+								aria-expanded="false"
+							>
+								アコーディオン Example 2
+								<span class="c--accordion_icon a--icon -pi:center -fxsh:0" aria-hidden="true"></span>
+							</button>
+						</div>
+						<div class="c--accordion_panel -pos:rel -ov:hidden" id="acc-panel-2" hidden="until-found">
+							<div class="c--accordion_content l--flow -p:20 -pt:5">
 								<p>
 									Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non
-									facere laudantium ex eos doloribus aut dolore nisi provident libero, eum nulla sunt,
-									porro sed dicta. Impedit ullam eveniet obcaecati minima.
+									facere laudantium ex eos doloribus aut dolore nisi provident libero.
 								</p>
 							</div>
 						</div>
-					</details>
-					<details class="d--accordion -p:20 -bd:t">
-						<summary class="d--accordion_header l--flex -ai:c -fw:bold">
-							<span class="d--accordion_label -fx:1">Question 02 ?</span>
-							<span class="d--accordion_icon -d:ig">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 256 256"
-									width="1em"
-									height="1em"
-									fill="currentColor"
-									focusable="false"
-									class="l--icon"
-									aria-hidden="true"
-								>
-									<path
-										d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
-									></path>
-								</svg>
-							</span>
-						</summary>
-						<div class="d--accordion_body l--grid -mbs:20">
-							<div class="d--accordion_inner -ov:h">
-								<p>
-									Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non
-									facere laudantium ex eos doloribus aut dolore nisi provident libero, eum nulla sunt,
-									porro sed dicta. Impedit ullam eveniet obcaecati minima.
-								</p>
-							</div>
-						</div>
-					</details>
-					<details class="d--accordion -p:20 -bd:t">
-						<summary class="d--accordion_header l--flex -ai:c -fw:bold">
-							<span class="d--accordion_label -fx:1">Question 03 ?</span>
-							<span class="d--accordion_icon -d:ig">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 256 256"
-									width="1em"
-									height="1em"
-									fill="currentColor"
-									focusable="false"
-									class="l--icon"
-									aria-hidden="true"
-								>
-									<path
-										d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
-									></path>
-								</svg>
-							</span>
-						</summary>
-						<div class="d--accordion_body l--grid -mbs:20">
-							<div class="d--accordion_inner -ov:h">
-								<p>
-									Lorem ipsum dolor sit, amet consectetur adipisicing elit, sed do eiusmod tempor. Non
-									facere laudantium ex eos doloribus aut dolore nisi provident libero, eum nulla sunt,
-									porro sed dicta. Impedit ullam eveniet obcaecati minima.
-								</p>
-							</div>
-						</div>
-					</details>
+					</div>
 				</div>
 			</div>
 			<div hx-get="/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>

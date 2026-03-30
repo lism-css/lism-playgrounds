@@ -2,6 +2,9 @@
 	"name": "lism-with-htmx",
 	"private": true,
 	"scripts": {
-		"dev": "python3 -m http.server 8000"
+		"dev": "serve --listen 8000 ."
+	},
+	"devDependencies": {
+		"serve": "^14.2.6"
 	}
 }

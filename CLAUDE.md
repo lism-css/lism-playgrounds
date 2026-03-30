@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 pnpm install
 pnpm dev:astro   # Astro 開発サーバー (localhost:4321)
 pnpm dev:vite    # Vite 開発サーバー
-pnpm dev:htmx    # Python の http.server (port 8000)
+pnpm dev:htmx    # Node の serve（静的配信、port 8000）
 ```
 
 ### lism-with-astro
@@ -34,7 +34,7 @@ pnpm run build    # TypeScriptチェック + ビルド
 ### lism-with-htmx
 
 ```bash
-pnpm run dev      # python3 -m http.server 8000
+pnpm run dev      # serve --listen 8000 .（静的ファイル、8000 以外に逃げない）
 ```
 
 ## アーキテクチャ概要
