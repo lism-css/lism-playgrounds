@@ -1,81 +1,70 @@
-import { Text, Link, Box, Flex, Stack, Dummy, Container, Columns } from 'lism-css/react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { Accordion } from '@lism-css/ui/react';
+import { Box, Flex, Container, HTML, Dummy, Divider, Columns, Icon, Cluster, Lism } from "lism-css/react";
+import { Accordion } from "@lism-css/ui/react";
+// import { Lightbulb } from "lucide-react";
 
 function App() {
 	return (
-		<Stack minH='100dvh'>
-			<Header />
-			<Container size='m' hasGutter isFlow mbs='50'>
-				<Text fw='bold' fz='l'>
-					This site is a playground for testing lism-css.
-				</Text>
-				<Flex g={['20', '30', '40']} p={['20', '30', '40']} bd bdc='divider'>
-					<Box lh='1' p='30' bd>
-						1
-					</Box>
-					<Box lh='1' p='30' bd>
-						2
-					</Box>
-					<Box lh='1' p='30' bd>
-						3
-					</Box>
-					<Box lh='1' p='30' bd mis='auto'>
-						4
-					</Box>
-				</Flex>
+		<Container size="s" setGutter layout="flow">
+			<Flex g="15" py="15">
+				<img src="vite.svg" alt="Vite" />
+				<h1>Vite + Lism UI</h1>
+			</Flex>
+			<Lism />
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat itaque et voluptatum, ducimus
+				temporibus accusamus exercitationem dolores id impedit corporis asperiores debitis soluta, nemo iusto
+				optio quae. Ducimus, aperiam tempora!
+			</p>
 
-				<Dummy length='l' />
-				<Box isFullwide hasGutter isFlow bgc='base-2' py='50' my='50'>
-					<Text ta='c'>Fullwide area</Text>
-					<Columns cols='2' g='40'>
-						<Box bgc='base' p='40' bdrs='20' bxsh='30'>
-							Columns
-						</Box>
-						<Box bgc='base' p='40' bdrs='20' bxsh='30'>
-							Columns
-						</Box>
-					</Columns>
-					<Link href='###' hov='fade' c='base' bgc='text' d='f' w='fit' mx='auto' px='40' py='20' td='n' bdrs='99'>
-						Link Button
-					</Link>
+			<Flex g={["10", "15", "20"]} p={["10", "15", "20"]} bd>
+				<Box lh="1" p="20" bd>
+					1
 				</Box>
+				<Box lh="1" p="20" bd>
+					2
+				</Box>
+				<Box lh="1" p="20" bd>
+					3
+				</Box>
+				<Box lh="1" p="20" bd mx-s="auto">
+					4
+				</Box>
+			</Flex>
+			<Columns cols="2" g="30">
+				<Box bgc="base" p="30" bdrs="10" bxsh="30">
+					Columns
+				</Box>
+				<Box bgc="base" p="30" bdrs="10" bxsh="30">
+					Columns
+				</Box>
+			</Columns>
 
-				<Dummy length='l' />
+			<Dummy length="s" />
+			<Cluster g="10">
+				<span>Icons:</span>
+				<Icon icon="lightbulb" size="1.5em" />
+				{/* <Icon as={Lightbulb} size="1.5em" />
+				<Icon icon={{ as: Lightbulb, strokeWidth: "3" }} c="orange" size="1.5em" /> */}
+			</Cluster>
+			<Dummy length="l" />
 
-				<Stack maxW='s' bd='b' my='50'>
-					<Accordion.Root p='20' bd='t'>
-						<Accordion.Header fw='bold'>
-							<Accordion.Label>Question 01 ?</Accordion.Label>
-							<Accordion.Icon />
-						</Accordion.Header>
-						<Accordion.Body mbs='20'>
-							<Dummy length='l' />
-						</Accordion.Body>
-					</Accordion.Root>
-					<Accordion.Root p='20' bd='t'>
-						<Accordion.Header fw='bold'>
-							<Accordion.Label>Question 02 ?</Accordion.Label>
-							<Accordion.Icon />
-						</Accordion.Header>
-						<Accordion.Body mbs='20'>
-							<Dummy length='l' />
-						</Accordion.Body>
-					</Accordion.Root>
-					<Accordion.Root p='20' bd='t'>
-						<Accordion.Header fw='bold'>
-							<Accordion.Label>Question 03 ?</Accordion.Label>
-							<Accordion.Icon />
-						</Accordion.Header>
-						<Accordion.Body mbs='20'>
-							<Dummy length='l' />
-						</Accordion.Body>
-					</Accordion.Root>
-				</Stack>
-			</Container>
-			<Footer />
-		</Stack>
+			<Flex jc="center">
+				<HTML.a href="###" hov="o" bgc="text" lh="xs" c="base" px="20" py="15" td="none" bdrs="50">
+					Link Button
+				</HTML.a>
+			</Flex>
+			<Divider />
+			<Accordion.Root>
+				<Accordion.Item bd>
+					<Accordion.Heading>
+						<Accordion.Button p="20">アコーディオン Example 1</Accordion.Button>
+					</Accordion.Heading>
+					<Accordion.Panel p="20" pt="5">
+						<p>これはアコーディオンの中身です。@lism-css/ui を使用しています。</p>
+					</Accordion.Panel>
+				</Accordion.Item>
+			</Accordion.Root>
+		</Container>
 	);
 }
 

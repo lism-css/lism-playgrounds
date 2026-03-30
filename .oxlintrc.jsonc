@@ -1,0 +1,21 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["eslint", "typescript", "react", "jsx-a11y", "import", "unicorn", "oxc"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn",
+	},
+	"rules": {
+		// React 19 + automatic JSX runtime では不要
+		"react/react-in-jsx-scope": "off",
+		// CSS import など副作用のみのインポートは許可
+		"import/no-unassigned-import": "off",
+		// 制御文字の除去は意図的に使用している
+		"eslint/no-control-regex": "off",
+		// autoFocus はタイピング練習アプリの UX 上必須
+		"jsx-a11y/no-autofocus": "off",
+		// sort() の破壊的変更は承知の上で使用（コピー済み配列やテスト用途）
+		"unicorn/no-array-sort": "off",
+	},
+	"ignorePatterns": ["dist/**", "build/**", "node_modules/**"],
+}

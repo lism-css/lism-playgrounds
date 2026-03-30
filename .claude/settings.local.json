@@ -1,8 +1,11 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(git init:*)"
-    ],
-    "deny": []
-  }
+	"permissions": {
+		"allow": [
+			"Bash(git init:*)",
+			"mcp__lism-css__get_component",
+			"mcp__lism-css__search_docs",
+			"mcp__lism-css__get_props_system"
+		],
+		"deny": []
+	}
 }

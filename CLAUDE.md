@@ -8,24 +8,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## プロジェクト別コマンド
 
+### リポジトリルート（pnpm ワークスペース）
+
+```bash
+pnpm install
+pnpm dev:astro   # Astro 開発サーバー (localhost:4321)
+pnpm dev:vite    # Vite 開発サーバー
+pnpm dev:htmx    # Python の http.server (port 8000)
+```
+
 ### lism-with-astro
 
 ```bash
-npm run dev      # 開発サーバー起動 (localhost:4321)
-npm run build    # プロダクションビルド
+pnpm run dev      # 開発サーバー起動 (localhost:4321)
+pnpm run build    # プロダクションビルド
 ```
 
 ### lism-with-vite
 
 ```bash
-npm run dev      # 開発サーバー起動
-npm run build    # TypeScriptチェック + ビルド
+pnpm run dev      # 開発サーバー起動
+pnpm run build    # TypeScriptチェック + ビルド
 ```
 
-### lism-with-html
+### lism-with-htmx
 
 ```bash
-python3 -m http.server 8000  # 開発サーバー起動
+pnpm run dev      # python3 -m http.server 8000
 ```
 
 ## アーキテクチャ概要
@@ -33,13 +42,13 @@ python3 -m http.server 8000  # 開発サーバー起動
 ### 共通の依存関係
 
 -   **lism-css**: 全プロジェクトで使用される UI ライブラリ
-    -   Astro/Vite プロジェクト: npm 経由でインストール
+    -   Astro/Vite プロジェクト: pnpm 経由でインストール
     -   HTML プロジェクト: CDN 経由で読み込み
 
 ### プロジェクト構成
 
 1. **lism-with-astro**: Astro の.astro コンポーネントを使用。ファイルベースルーティング（src/pages/）
-2. **lism-with-html**: htmx を使用した動的コンテンツ読み込み。header/footer を別ファイルで管理
+2. **lism-with-htmx**: htmx を使用した動的コンテンツ読み込み。header/footer を別ファイルで管理
 3. **lism-with-vite**: React + TypeScript 構成。コンポーネントベースアーキテクチャ
 
 ### 重要な設定ファイル

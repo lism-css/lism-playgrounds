@@ -1,0 +1,5 @@
+# 各 lism-with-* を1つの pnpm ワークスペースにまとめる
+packages:
+    - "lism-with-astro"
+    - "lism-with-vite"
+    - "lism-with-htmx"

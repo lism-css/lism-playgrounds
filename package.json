@@ -1,0 +1,19 @@
+{
+	"name": "lism-playgrounds",
+	"private": true,
+	"scripts": {
+		"dev": "node -e \"console.error('ルートでは次を使ってください: pnpm dev:astro | pnpm dev:vite | pnpm dev:htmx（ni なら nr dev:astro など）'); process.exit(1)\"",
+		"dev:astro": "pnpm --filter lism-with-astro dev",
+		"dev:vite": "pnpm --filter lism-with-vite dev",
+		"dev:htmx": "pnpm --filter lism-with-htmx dev",
+		"build:astro": "pnpm --filter lism-with-astro build",
+		"build:vite": "pnpm --filter lism-with-vite build",
+		"lint": "oxlint",
+		"format": "oxfmt --write .",
+		"format:check": "oxfmt --check ."
+	},
+	"devDependencies": {
+		"oxfmt": "latest",
+		"oxlint": "latest"
+	}
+}

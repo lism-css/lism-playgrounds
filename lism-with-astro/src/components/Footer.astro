@@ -1,11 +1,11 @@
 ---
-import { Stack, Text, Container } from "lism-css/astro";
+import { Lism, Stack, Container } from "lism-css/astro";
 ---
 
-<Container size="m" tag="footer" hasGutter pbs="50" py="40" mt="auto">
+<Container size="m" as="footer" setGutter py-s="50" py="40" mt="auto">
   <Stack ai="c" bgc="base-2" p="30" bdrs="99" bxsh="10" lh="xs">
-    <Text fz="l"> Lism CSS</Text>
-    <Text fz="xs">
-      <a href="https://www.lism-css.com/" target="_blank">www.lism-css.com</a></Text>
+    <Lism as="p" fz="l">Lism CSS</Lism>
+    <Lism as="p" fz="xs">
+      <a href="https://www.lism-css.com/" target="_blank">www.lism-css.com</a></Lism>
   </Stack>
 </Container>
