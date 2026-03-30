@@ -12,15 +12,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 pnpm install
-pnpm dev:astro   # Astro 開発サーバー (localhost:4321)
-pnpm dev:vite    # Vite 開発サーバー
-pnpm dev:htmx    # Node の serve（静的配信、port 8000）
+pnpm dev:astro   # Astro 開発サーバー (localhost:4101)
+pnpm dev:vite    # Vite 開発サーバー (localhost:4103)
+pnpm dev:htmx    # Node の serve（静的配信、localhost:4102）
 ```
 
 ### lism-with-astro
 
 ```bash
-pnpm run dev      # 開発サーバー起動 (localhost:4321)
+pnpm run dev      # 開発サーバー起動 (localhost:4101)
 pnpm run build    # プロダクションビルド
 ```
 
@@ -34,7 +34,7 @@ pnpm run build    # TypeScriptチェック + ビルド
 ### lism-with-htmx
 
 ```bash
-pnpm run dev      # serve --listen 8000 .（静的ファイル、8000 以外に逃げない）
+pnpm run dev      # serve --listen 4102 .（静的ファイル配信）
 ```
 
 ## アーキテクチャ概要

@@ -2,7 +2,7 @@
 	"name": "lism-with-htmx",
 	"private": true,
 	"scripts": {
-		"dev": "serve --listen 8000 ."
+		"dev": "serve --listen 4102 ."
 	},
 	"devDependencies": {
 		"serve": "^14.2.6"
